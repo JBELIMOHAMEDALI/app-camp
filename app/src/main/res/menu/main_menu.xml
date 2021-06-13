@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:title="@string/home"
+            android:icon="@drawable/ic_dashboard"/>
+        <item
+            android:id="@+id/nav_search"
+            android:title="@string/search"
+            android:icon="@drawable/ic_search"/>
+        <item
+            android:id="@+id/nav_addCamp"
+            android:title="@string/add_camping"
+            android:icon="@drawable/ic_addcamp"/>
+        <item
+            android:id="@+id/nav_favorite"
+            android:title="@string/favourite_camps"
+            android:icon="@drawable/ic_favourite"/>
+        <item
+            android:id="@+id/nav_history"
+            android:title="@string/camp_history"
+            android:icon="@drawable/ic_history"/>
+    </group>
+
+    <item android:title="@string/profile">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_profile"
+                    android:title="@string/profile"
+                    android:icon="@drawable/ic_account"/>
+                <item
+                    android:id="@+id/nav_logout"
+                    android:title="@string/logout"
+                    android:icon="@drawable/logout"
+                    android:iconTint="@color/white"/>
+            </group>
+        </menu>
+    </item>
+</menu>

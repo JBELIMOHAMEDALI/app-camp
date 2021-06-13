@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg3">
+
+    <TextView
+        android:id="@+id/skip_link"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="23dp"
+        android:layout_marginEnd="-11dp"
+        android:text="@string/skip_link"
+        android:textColor="@color/my_white"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/slide_img"
+        android:layout_width="250dp"
+        android:layout_height="150dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="145dp"
+        android:contentDescription="@string/sahara_img"
+        app:srcCompat="@drawable/sahara2" />
+
+    <TextView
+        android:id="@+id/slide_heading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="296dp"
+        android:layout_marginEnd="139dp"
+        android:text="@string/title_frag3"
+        android:textColor="@color/my_white"
+        android:textSize="30sp"
+        tools:ignore="RelativeOverlap" />
+
+    <TextView
+        android:id="@+id/slide_description"
+        android:layout_width="245dp"
+        android:layout_height="107dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="419dp"
+        android:layout_marginBottom="195dp"
+        android:elevation="2dp"
+        android:ellipsize="middle"
+        android:gravity="center|center_horizontal|center_vertical"
+        android:text="@string/text_frag3"
+        android:textColor="@color/mylight_grey"
+        android:textSize="14sp" />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="62dp"
+        android:contentDescription="@string/dots_frag3"
+        android:src="@drawable/dots3" />
+</RelativeLayout>

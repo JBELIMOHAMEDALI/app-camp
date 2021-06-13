@@ -1,0 +1,61 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/code
+    docker:
+      - image: circleci/android:api-30
+    environment:
+      JVM_OPTS: -Xmx3200m
+    steps:
+      - checkout
+      - restore_cache:
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum "app/build.gradle" }}
+      - run:
+          name: chmod permissions
+          command: chmod +x ./gradlew
+      - run:
+          name: Download Dependencies
+          command: ./gradlew androidDependencies
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum "app/build.gradle" }}
+      - run:
+          name: Run Tests
+          command: ./gradlew lint test
+      - store_artifacts:
+          path: app/build/reports
+          destination: reports
+      - store_test_results:
+          path: app/build/test-results
+deploy:
+    machine:
+        enabled: true
+    working_directory: ~/circleci-demo-workflows
+    environment:
+      HEROKU_APP: "sleepy-refuge-55486" # define env var $HEROKU_APP
+    steps:
+      - checkout
+      - run:
+          name: Setup Heroku
+          command: bash .circleci/setup-heroku.sh # run a script to set up Heroku
+
+      - run:
+          command: |
+            git push heroku sequential-branch-filter:master
+            heroku run rake db:migrate
+            sleep 5 # sleep for 5 seconds to wait for dynos
+            heroku restart
+
+workflows:
+  version: 2
+  build-and-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: sequential-branch-filter
+
