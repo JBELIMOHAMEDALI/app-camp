@@ -15,18 +15,16 @@
         <activity android:name=".Controller.Pages.FavoriteActivity" />
         <activity android:name=".Controller.Pages.AddCampActivity" />
         <activity android:name=".Controller.Pages.SearchActivity" />
-        <activity android:name=".Controller.Pages.HomeActivity" >
+        <activity android:name=".Controller.Pages.HomeActivity" />
+        <activity android:name=".Controller.Pages.WelcomeActivity" />
+        <activity android:name=".Controller.Pages.RegisterActivity" />
+        <activity android:name=".Controller.Pages.LoginActivity" />
+        <activity android:name=".Controller.Pages.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".Controller.Pages.WelcomeActivity" />
-        <activity android:name=".Controller.Pages.RegisterActivity" />
-        <activity android:name=".Controller.Pages.LoginActivity" />
-        <activity android:name=".Controller.Pages.MainActivity">
-
         </activity>
 
         <meta-data
